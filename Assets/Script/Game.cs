@@ -14,6 +14,8 @@ public class Game : MonoBehaviour
     public GameObject G3;
     public GameObject G4;
     public GameObject G5;
+    public GameObject G6;
+    public GameObject G7;
     GameObject nowG;
 
 
@@ -23,16 +25,19 @@ public class Game : MonoBehaviour
     public Sprite i3;
     public Sprite i4;
     public Sprite i5;
+    public Sprite i6;
+    public Sprite i7;
+
+
 
 
     public GameObject FXPanal;
-    public GameObject TL0;
-    public GameObject TL1;
-    public GameObject TL2;
-    public GameObject TL3;
-    public GameObject TL4;
-    public GameObject TL5;
+    public GameObject TLS;
+    public GameObject TLF;
+    public GameObject x;
+    public GameObject o;
     GameObject nowTL;
+    GameObject nowTLox;
 
     public GameObject inButton;
     public GameObject outButton;
@@ -42,20 +47,28 @@ public class Game : MonoBehaviour
     public TMP_InputField f3;
     public TMP_InputField f4;
     public TMP_InputField f5;
+    public TMP_InputField f6;
+    public TMP_InputField f7;
     int p2 = 1;
     int p3 = 1;
     int p4 = 1;
     int p5 = 1;
+    int p6 = 1;
+    int p7 = 1;
 
-    public TMP_Text Num1;
+
     public TMP_Text Num2;
     public TMP_Text Num3;
     public TMP_Text Num4;
     public TMP_Text Num5;
+    public TMP_Text Num6;
+    public TMP_Text Num7;
 
+    float a = 0;
+    int now;
     void Start()
     {
-
+        now = 0;
     }
 
     // Update is called once per frame
@@ -65,16 +78,43 @@ public class Game : MonoBehaviour
         p3 = int.Parse(f3.text);
         p4 = int.Parse(f4.text);
         p5 = int.Parse(f5.text);
+       p6 = int.Parse(f6.text);
+       p7 = int.Parse(f7.text);
 
-        Num1.text = 100.ToString();
-        Num2.text = (Mathf.Floor((100f/p2)*100)/100).ToString();
-        Num3.text = (Mathf.Floor((100f/p3)*100)/100).ToString();
-        Num4.text = (Mathf.Floor((100f/p4)*100)/100).ToString();
-        Num5.text = (Mathf.Floor((100f/p5)*100)/100).ToString();
-       
 
-      
+        Num2.text = (Mathf.Floor((100f / p2) * 100) / 100).ToString();
+        Num3.text = (Mathf.Floor((100f / p3) * 100) / 100).ToString();
+        Num4.text = (Mathf.Floor((100f / p4) * 100) / 100).ToString();
+        Num5.text = (Mathf.Floor((100f / p5) * 100) / 100).ToString();
+        Num6.text = (Mathf.Floor((100f / p6) * 100) / 100).ToString();
+        Num7.text = (Mathf.Floor((100f / p7) * 100) / 100).ToString();
 
+        a -= Time.deltaTime;
+
+
+        if (Input.GetKeyDown("p"))
+        {
+
+            if (a < -5)
+            {
+                if (now == 0)
+                    GameStart1();
+                else if (now == 1)
+                    GameStart2();
+                else if (now == 2)
+                    GameStart3();
+                else if (now == 3)
+                    GameStart4();
+                else if (now == 4)
+                    GameStart5();
+                else if (now == 5)
+                    GameStart6();
+                else if (now == 6)
+                    GameStart7();
+                a = 0;
+            }
+
+        }
 
 
     }
@@ -86,11 +126,15 @@ public class Game : MonoBehaviour
             G1.gameObject.SetActive(false);
 
             FXPanal.SetActive(true);
-            coin.GetComponent<Image>().sprite = i1;
-            nowTL = TL2;
-            nowG = G2;
-            Invoke("TimeLine", 3);
+            TLS.SetActive(true);
+            o.SetActive(true);
 
+            nowG = G2;
+            nowTL = TLS;
+            nowTLox = o;
+            now = 1;
+            Invoke("TimeLine", 5);
+            
 
         }
         else
@@ -98,9 +142,14 @@ public class Game : MonoBehaviour
             G1.gameObject.SetActive(false);
             FXPanal.SetActive(true);
             coin.GetComponent<Image>().sprite = i1;
-            nowTL = TL1;
+            TLF.SetActive(true);
+            x.SetActive(true);
+
             nowG = G1;
-            Invoke("TimeLine", 3);
+            nowTL = TLF;
+            nowTLox = x;
+            now = 0;
+            Invoke("TimeLine", 5);
         }
 
     }
@@ -112,9 +161,15 @@ public class Game : MonoBehaviour
             G2.gameObject.SetActive(false);
             FXPanal.SetActive(true);
             coin.GetComponent<Image>().sprite = i2;
-            nowTL = TL3;
+            TLS.SetActive(true);
+            o.SetActive(true);
+
             nowG = G3;
-            Invoke("TimeLine", 3);
+            nowTL = TLS;
+            nowTLox = o;
+            now = 2;
+
+            Invoke("TimeLine", 5);
         }
         else
         {
@@ -122,9 +177,15 @@ public class Game : MonoBehaviour
             G1.gameObject.SetActive(false);
             FXPanal.SetActive(true);
             coin.GetComponent<Image>().sprite = i2;
-            nowTL = TL1;
+            TLF.SetActive(true);
+            x.SetActive(true);
+
             nowG = G1;
-            Invoke("TimeLine", 3);
+            nowTL = TLF;
+            nowTLox = x;
+            now = 0;
+
+            Invoke("TimeLine", 5);
         }
 
     }
@@ -136,9 +197,14 @@ public class Game : MonoBehaviour
             G3.gameObject.SetActive(false);
             FXPanal.SetActive(true);
             coin.GetComponent<Image>().sprite = i3;
-            nowTL = TL4;
+            TLS.SetActive(true);
+            o.SetActive(true);
+
             nowG = G4;
-            Invoke("TimeLine", 3);
+            nowTL = TLS;
+            nowTLox = o;
+            now = 3;
+            Invoke("TimeLine", 5);
         }
         else
         {
@@ -146,9 +212,14 @@ public class Game : MonoBehaviour
             G1.gameObject.SetActive(false);
             FXPanal.SetActive(true);
             coin.GetComponent<Image>().sprite = i3;
-            nowTL = TL1;
+            TLF.SetActive(true);
+            x.SetActive(true);
+
             nowG = G1;
-            Invoke("TimeLine", 3);
+            nowTL = TLF;
+            nowTLox = x;
+            now = 0;
+            Invoke("TimeLine", 5);
         }
 
     }
@@ -160,9 +231,14 @@ public class Game : MonoBehaviour
             G4.gameObject.SetActive(false);
             FXPanal.SetActive(true);
             coin.GetComponent<Image>().sprite = i4;
-            nowTL = TL5;
+            TLS.SetActive(true);
+            o.SetActive(true);
+
             nowG = G5;
-            Invoke("TimeLine", 3);
+            nowTL = TLS;
+            nowTLox = o;
+            now = 4;
+            Invoke("TimeLine", 5);
         }
         else
         {
@@ -170,18 +246,92 @@ public class Game : MonoBehaviour
             G1.gameObject.SetActive(false);
             FXPanal.SetActive(true);
             coin.GetComponent<Image>().sprite = i4;
-            nowTL = TL1;
+            TLF.SetActive(true);
+            x.SetActive(true);
+
             nowG = G1;
-            Invoke("TimeLine", 3);
+            nowTL = TLF;
+            nowTLox = x;
+            now = 0;
+            Invoke("TimeLine", 5);
         }
 
     }
     public void GameStart5()
     {
+        int a6 = UnityEngine.Random.Range(1, p6);
+        if (a6 == 1)
+        {
+            G5.gameObject.SetActive(false);
+            FXPanal.SetActive(true);
+            coin.GetComponent<Image>().sprite = i5;
+            TLS.SetActive(true);
+            o.SetActive(true);
 
-        G5.gameObject.SetActive(false);
+            nowG = G6;
+            nowTL = TLS;
+            nowTLox = o;
+            now = 5;
+            Invoke("TimeLine", 5);
+        }
+        else
+        {
+            nowG.gameObject.SetActive(false);
+            G1.gameObject.SetActive(false);
+            FXPanal.SetActive(true);
+            coin.GetComponent<Image>().sprite = i4;
+            TLF.SetActive(true);
+            x.SetActive(true);
+
+            nowG = G1;
+            nowTL = TLF;
+            nowTLox = x;
+            now = 0;
+            Invoke("TimeLine", 5);
+        }
+
+    }
+    public void GameStart6()
+    {
+        int a7 = UnityEngine.Random.Range(1, p7);
+        if (a7 == 1)
+        {
+            G6.gameObject.SetActive(false);
+            FXPanal.SetActive(true);
+            coin.GetComponent<Image>().sprite = i6;
+            TLS.SetActive(true);
+            o.SetActive(true);
+
+            nowG = G7;
+            nowTL = TLS;
+            nowTLox = o;
+            now = 6;
+            Invoke("TimeLine", 5);
+        }
+        else
+        {
+            nowG.gameObject.SetActive(false);
+            G1.gameObject.SetActive(false);
+            FXPanal.SetActive(true);
+            coin.GetComponent<Image>().sprite = i4;
+            TLF.SetActive(true);
+            x.SetActive(true);
+
+            nowG = G1;
+            nowTL = TLS;
+            nowTLox = x;
+            now = 0;
+            Invoke("TimeLine", 5);
+        }
+
+    }
+    public void GameStart7()
+    {
+
+        G7.gameObject.SetActive(false);
         G1.gameObject.SetActive(true);
-
+        coin.GetComponent<Image>().sprite = i1;
+        now = 0;
 
     }
     public void Inbutton()
@@ -202,17 +352,12 @@ public class Game : MonoBehaviour
     void TimeLine()
     {
 
-        TL0.SetActive(true);
         FXPanal.SetActive(false);
-        nowTL.SetActive(true);
-        Invoke("TimeLineOut", 3);
-
-    }
-
-    void TimeLineOut()
-    {
         nowTL.SetActive(false);
-        TL0.SetActive(false);
+        nowTLox.SetActive(false);
         nowG.gameObject.SetActive(true);
+
     }
+
+
 }
