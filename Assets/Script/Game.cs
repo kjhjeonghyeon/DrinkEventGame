@@ -136,8 +136,8 @@ public class Game : MonoBehaviour
             nowTLox = o;
             now = 1;
             coinChangeNow = i2;
-            Invoke("Coinchange", 5.4f);
-            Invoke("TimeLine", 10);
+            Invoke("Coinchange", 4.2f);
+            Invoke("TimeLine", 6f);
 
 
 
@@ -154,8 +154,9 @@ public class Game : MonoBehaviour
             nowTL = TLF;
             nowTLox = x;
             now = 0; coinChangeNow = i1;
-            Invoke("Coinchange", 5.4f);
-            Invoke("TimeLine", 10);
+            Invoke("Coinchange", 4.2f);
+            Invoke("TimeLine", 6f);
+
         }
 
     }
@@ -175,8 +176,9 @@ public class Game : MonoBehaviour
             nowTLox = o;
             now = 2;
             coinChangeNow = i3;
-            Invoke("Coinchange", 5.4f);
-            Invoke("TimeLine", 10);
+            Invoke("Coinchange", 4.2f);
+            Invoke("TimeLine", 6f);
+
         }
         else
         {
@@ -192,8 +194,9 @@ public class Game : MonoBehaviour
             nowTLox = x;
             now = 0;
             coinChangeNow = i1;
-            Invoke("Coinchange", 5.4f);
-            Invoke("TimeLine", 10);
+            Invoke("Coinchange", 4.2f);
+            Invoke("TimeLine", 6f);
+
         }
 
     }
@@ -213,8 +216,9 @@ public class Game : MonoBehaviour
             nowTLox = o;
             now = 3;
             coinChangeNow = i4;
-            Invoke("Coinchange", 5.4f);
-            Invoke("TimeLine", 10);
+            Invoke("Coinchange", 4.2f);
+            Invoke("TimeLine", 6f);
+
         }
         else
         {
@@ -229,8 +233,9 @@ public class Game : MonoBehaviour
             nowTL = TLF;
             nowTLox = x;
             now = 0; coinChangeNow = i1;
-            Invoke("Coinchange", 5.4f);
-            Invoke("TimeLine", 10);
+            Invoke("Coinchange", 4.2f);
+            Invoke("TimeLine", 6f);
+
         }
 
     }
@@ -250,8 +255,9 @@ public class Game : MonoBehaviour
             nowTLox = o;
             now = 4;
             coinChangeNow = i5;
-            Invoke("Coinchange", 5.4f);
-            Invoke("TimeLine", 10);
+            Invoke("Coinchange", 4.2f);
+            Invoke("TimeLine", 6f);
+
         }
         else
         {
@@ -266,8 +272,9 @@ public class Game : MonoBehaviour
             nowTL = TLF;
             nowTLox = x;
             now = 0; coinChangeNow = i1;
-            Invoke("Coinchange", 5.4f);
-            Invoke("TimeLine", 10);
+            Invoke("Coinchange", 4.2f);
+            Invoke("TimeLine", 6f);
+
         }
 
     }
@@ -286,8 +293,9 @@ public class Game : MonoBehaviour
             nowTL = TLS;
             nowTLox = o;
             now = 5; coinChangeNow = i6;
-            Invoke("Coinchange", 5.4f);
-            Invoke("TimeLine", 10);
+            Invoke("Coinchange", 4.2f);
+            Invoke("TimeLine", 6f);
+
         }
         else
         {
@@ -303,8 +311,9 @@ public class Game : MonoBehaviour
             nowTLox = x;
             now = 0;
             coinChangeNow = i1;
-            Invoke("Coinchange", 5.4f);
-            Invoke("TimeLine", 10);
+            Invoke("Coinchange", 4.2f);
+            Invoke("TimeLine", 6f);
+
         }
 
     }
@@ -323,8 +332,9 @@ public class Game : MonoBehaviour
             nowTL = TLS;
             nowTLox = o;
             now = 6; coinChangeNow = i7;
-            Invoke("Coinchange", 5.4f);
-            Invoke("TimeLine", 10);
+            Invoke("Coinchange", 4.2f);
+            Invoke("TimeLine", 6f);
+
         }
         else
         {
@@ -340,8 +350,9 @@ public class Game : MonoBehaviour
             nowTLox = x;
             now = 0;
             coinChangeNow = i1;
-            Invoke("Coinchange", 5.4f);
-            Invoke("TimeLine", 10);
+            Invoke("Coinchange", 4.2f);
+            Invoke("TimeLine", 6f);
+
         }
 
     }
