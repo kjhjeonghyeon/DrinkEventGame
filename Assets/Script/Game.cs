@@ -33,6 +33,7 @@ public class Game : MonoBehaviour
 
 
 
+
     public GameObject FXPanal;
     public GameObject TLS;
     public GameObject TLF;
@@ -65,7 +66,7 @@ public class Game : MonoBehaviour
     public TMP_Text Num5;
     public TMP_Text Num6;
     public TMP_Text Num7;
-
+    public TMP_FontAsset font;
     float a = 0;
     int now;
     void Start()
@@ -80,28 +81,37 @@ public class Game : MonoBehaviour
         p3 = int.Parse(f3.text);
         p4 = int.Parse(f4.text);
         p5 = int.Parse(f5.text);
-       p6 = int.Parse(f6.text);
-       p7 = int.Parse(f7.text);
+        p6 = int.Parse(f6.text);
+        p7 = int.Parse(f7.text);
 
 
-        Num2.text = (Mathf.Floor((100f / p2) * 100) / 100).ToString();
-        Num3.text = (Mathf.Floor((100f / p3) * 100) / 100).ToString();
-        Num4.text = (Mathf.Floor((100f / p4) * 100) / 100).ToString();
-        Num5.text = (Mathf.Floor((100f / p5) * 100) / 100).ToString();
-        Num6.text = (Mathf.Floor((100f / p6) * 100) / 100).ToString();
-        Num7.text = (Mathf.Floor((100f / p7) * 100) / 100).ToString();
 
+
+
+
+        Num2.text =p2.ToString();
+        Num3.text =p3.ToString();
+        Num4.text =p4.ToString();
+        Num5.text =p5.ToString();
+        Num6.text =p6.ToString();
+        Num7.text =p7.ToString();
+        Num7.font = font;
+        Num2.font = font;
+        Num3.font = font;
+        Num4.font = font;
+        Num5.font = font;
+        Num6.font = font;
         a -= Time.deltaTime;
 
 
         if (Input.GetKeyDown("p"))
         {
 
-            if (a < -10)
+            if (now == 0)
+                GameStart1();
+            if (a < -6.2f)
             {
-                if (now == 0)
-                    GameStart1();
-                else if (now == 1)
+                if (now == 1)
                     GameStart2();
                 else if (now == 2)
                     GameStart3();
@@ -113,17 +123,21 @@ public class Game : MonoBehaviour
                     GameStart6();
                 else if (now == 6)
                     GameStart7();
+
+
                 a = 0;
             }
 
         }
 
 
+
     }
     public void GameStart1()
     {
-        int a2 = UnityEngine.Random.Range(1, p2);
-        if (a2 == 1)
+        
+        int a2 = UnityEngine.Random.Range(1, 100);
+        if (a2>1&&a2<p2)
         {
             G1.gameObject.SetActive(false);
 
@@ -162,8 +176,8 @@ public class Game : MonoBehaviour
     }
     public void GameStart2()
     {
-        int a3 = UnityEngine.Random.Range(1, p3);
-        if (a3 == 1)
+        int a3 = UnityEngine.Random.Range(1, 100);
+        if (a3 > 1 && a3 < p3)
         {
             G2.gameObject.SetActive(false);
             FXPanal.SetActive(true);
@@ -202,8 +216,8 @@ public class Game : MonoBehaviour
     }
     public void GameStart3()
     {
-        int a4 = UnityEngine.Random.Range(1, p4);
-        if (a4 == 1)
+        int a4 = UnityEngine.Random.Range(1, 100);
+        if (a4 > 1 && a4 < p4)
         {
             G3.gameObject.SetActive(false);
             FXPanal.SetActive(true);
@@ -241,8 +255,8 @@ public class Game : MonoBehaviour
     }
     public void GameStart4()
     {
-        int a5 = UnityEngine.Random.Range(1, p5);
-        if (a5 == 1)
+        int a5 = UnityEngine.Random.Range(1, 100);
+        if (a5 > 1 && a5 < p5)
         {
             G4.gameObject.SetActive(false);
             FXPanal.SetActive(true);
@@ -280,8 +294,8 @@ public class Game : MonoBehaviour
     }
     public void GameStart5()
     {
-        int a6 = UnityEngine.Random.Range(1, p6);
-        if (a6 == 1)
+        int a6 = UnityEngine.Random.Range(1, 100);
+        if (a6 > 1 && a6 < p6)
         {
             G5.gameObject.SetActive(false);
             FXPanal.SetActive(true);
@@ -319,8 +333,8 @@ public class Game : MonoBehaviour
     }
     public void GameStart6()
     {
-        int a7 = UnityEngine.Random.Range(1, p7);
-        if (a7 == 1)
+        int a7 = UnityEngine.Random.Range(1, 100);
+        if (a7 > 1 && a7 < p7)
         {
             G6.gameObject.SetActive(false);
             FXPanal.SetActive(true);
@@ -393,7 +407,7 @@ public class Game : MonoBehaviour
     }
     void Coinchange()
     {
-        
+
         coin.SetActive(false);
         coinChange.GetComponent<Image>().sprite = coinChangeNow;
         coinChange.SetActive(true);
